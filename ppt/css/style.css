@@ -1,0 +1,59 @@
+body { overflow: hidden; margin: 0;font-family: "Pretendard", sans-serif;text-rendering: optimizeLegibility; } 
+
+.well {position: relative;overflow: hidden;transition: 1s cubic-bezier(0.5, 0, 0.5, 1); } 
+
+/* .top {font-size: 80%;color: hsla(0, 0%, 100%, .25);position: relative;top: -.2em;cursor: pointer; } */
+
+
+
+.panel {overflow: hidden; height: 100vh; padding: 130px 130px 115px 130px; position: relative; box-sizing: border-box; cursor: default; } 
+.panel:nth-child(1) {background: #000; } 
+.panel:nth-child(2) {background: #000; } 
+.panel:nth-child(3) {background: #fff; } 
+.panel:nth-child(4) {background: #000 url("../asset/img/bg1.png") no-repeat center / cover; } 
+.panel:nth-child(5) {background: #fff; } 
+.panel:nth-child(6) {background: #fff; } 
+.panel:nth-child(7) {background: #fff; } 
+.panel:nth-child(8) {background: #fff; } 
+.panel:nth-child(9) {background: #000; } 
+
+/* 페이지 공통 */
+.panel .title{display: block; width: 100%; margin-bottom: 20px; font-size: 48px; font-weight: 900;}
+.panel .sub-title{margin-bottom: 20px; font-size: 32px; font-weight: 700; color: #000;}
+
+.panel .main-text{font-size: 36px; font-weight: 700; line-height: 64px; color: #fff;}
+.panel .main-text .marker{position: relative;}
+.panel .main-text .marker::after{content: ""; display: block; width: 0%; height: 18px; position: absolute; top:25px; left: 0; background-color: rgba(255, 255, 255, 0.50);
+transition: width 1s;}
+.panel .main-text .marker.on::after{width: 100%;}
+.panel .sub-text{display: block; width: 100%; font-size: 24px; font-weight: 500; color: #888; white-space: pre; line-height: normal;} 
+.panel .sub-text.type2{font-size: 18px;}
+.panel hr{ width: 100%; height: 1px; margin: 50px 0 73px; border: 0; background-color : #eaeaea;}
+.panel .content{width: 100%; height: auto; padding: 20px; background-color: #fcfcfc; border-radius: 4px;}
+.panel .content:not(:last-child){margin-bottom: 50px;}
+
+
+.bullet-list + .bullet-list{margin-top: 50px;}
+.bullet-list li{font-weight: 500;}
+.bullet-list li b {font-weight: 800;}
+.bullet-list li:not(:last-child){margin-bottom: 10px;}
+
+/* 첫번째 페이지 */
+.panel:nth-child(1){display: flex; flex-wrap: wrap; align-content: space-between;}
+.panel:nth-child(1) h1{width: 100%; font-size: 80px; font-weight: 800; color: #fff;}
+.panel:nth-child(1) .bottom{display: flex; justify-content: space-between; width: 100%;}
+.panel:nth-child(1) .bottom p{font-size: 28px; font-weight: 700; color: #fff;}
+
+/* 두번째 페이지 */
+.panel:nth-child(2){display: flex; align-items: center;}
+.panel:nth-child(2) h2{margin: 0 156px 0 0; color: #fff;}
+.panel:nth-child(2) .chapter{display: flex; flex-wrap: wrap; gap: 142px 135px; width: calc(100% - 300px);}
+.panel:nth-child(2) .chapter li{width: calc(50% - 67.5px);}
+.panel:nth-child(2) .chapter p{margin-bottom: 8px; font-size: 24px; font-weight: 700; color: #527FF7;}
+.panel:nth-child(2) .chapter h3{font-size: 36px; font-weight: 700; color: #fff;}
+
+/* 세번째 페이지 */
+.panel:nth-child(3){display: flex; align-items: center;}
+
+/* 네번째 페이지 */
+.panel:nth-child(4){display: flex; align-items: center;}
