@@ -1,11 +1,11 @@
-//full page.js
+// Parallax 구현
 (function () {
   "use strict";
   var pnls = document.querySelectorAll(".panel").length,
     scdir,
     hold = false;
 
-  function _scrollY(obj) {
+  function scrollY(obj) {
     var slength,
       plength,
       pan,
@@ -13,8 +13,8 @@
       vh = window.innerHeight / 100,
       vmin = Math.min(window.innerHeight, window.innerWidth) / 100;
     if (
-      (this !== undefined && this.id === "well") ||
-      (obj !== undefined && obj.id === "well")
+      (this !== undefined && this.id === "wrap") ||
+      (obj !== undefined && obj.id === "wrap")
     ) {
       pan = this || obj;
       plength = parseInt(pan.offsetHeight / vh);
@@ -41,7 +41,7 @@
     //console.log(scdir + ':' + slength + ':' + plength + ':' + (plength - plength / pnls));
   }
 
-  function _swipe(obj) {
+  function swipe(obj) {
     var swdir,
       sX,
       sY,
@@ -86,16 +86,16 @@
           } else if (Math.abs(dY) >= threshold && Math.abs(dX) <= slack) {
             swdir = dY < 0 ? "up" : "down";
           }
-          if (obj.id === "well") {
+          if (obj.id === "wrap") {
             if (swdir === "up") {
               scdir = swdir;
-              _scrollY(obj);
+              scrollY(obj);
             } else if (
               swdir === "down" &&
               obj.style.transform !== "translateY(0)"
             ) {
               scdir = swdir;
-              _scrollY(obj);
+              scrollY(obj);
             }
             e.stopPropagation();
           }
@@ -105,9 +105,9 @@
     );
   }
 
-  var well = document.getElementById("well");
-  well.style.transform = "translateY(0)";
-  well.addEventListener("wheel", function (e) {
+  var wrap = document.getElementById("wrap");
+  wrap.style.transform = "translateY(0)";
+  wrap.addEventListener("wheel", function (e) {
     if (e.deltaY < 0) {
       scdir = "down";
     }
@@ -116,19 +116,20 @@
     }
     e.stopPropagation();
   });
-  well.addEventListener("wheel", _scrollY);
-  _swipe(well);
+  wrap.addEventListener("wheel", scrollY);
+  swipe(wrap);
   //var tops = document.querySelectorAll('.top');
   //for (var i = 0; i < tops.length; i++) {
   //	tops[i].addEventListener('click', function() {
   //		scdir = 'top';
-  //		_scrollY(well);
+  //		scrollY(wrap);
   //	});
   //}
 })();
 
 const options = { root: null, threshold: 0.1, rootMargin: "-0px" };
 
+//2페이지 Interaction
 const index = document.getElementsByClassName("title")[0];
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
@@ -159,6 +160,7 @@ targets.forEach((target) => {
   observer2.observe(target);
 });
 
+//3페이지 Interaction
 const index2 = document.getElementsByClassName("title")[1];
 const subText = document.getElementsByClassName("sub-text")[0];
 
@@ -176,27 +178,8 @@ const observer3 = new IntersectionObserver(function (entries, observer) {
 observer3.observe(index2);
 observer3.observe(subText);
 
-let asd = `<span class="marker">
-            굳이
-           </span>`
-let asd2 = `<span class="marker">
-             굳이?!?
-           </span>`
-
-var contentText = `이걸 ${asd} 우리가 해야하나? ${asd2}`;
-const text = document.querySelector(".main-text");
-let i = 0;
-
-function typing() {
-  if (i < contentText.length) {
-    let txt = contentText.charAt(i);
-    text.innerHTML += txt;
-    i++;
-  }
-}
-setInterval(typing, 100);
-
-const marker = document.querySelectorAll(".marker");
+const mainText = document.getElementsByClassName("main-text")[0];
+const marker = document.getElementsByClassName("marker")[0];
 const observer4 = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
     const container = entry.target;
@@ -208,6 +191,58 @@ const observer4 = new IntersectionObserver(function (entries, observer) {
   });
 }, options);
 
-marker.forEach((target) => {
-  observer4.observe(target);
+observer4.observe(mainText);
+observer4.observe(marker);
+
+//4페이지 Interaction
+const bold = document.getElementsByClassName("fine")[0];
+
+const observer5 = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    const container = entry.target;
+    if (entry.isIntersecting) {
+      container.classList.add("on");
+    } else {
+      container.classList.remove("on");
+    }
+  });
+}, options);
+
+observer4.observe(bold);
+
+//5페이지 Interaction
+const panel5 = document.getElementsByClassName("panel")[9];
+const centerSub = document.getElementsByClassName("center-sub")[0];
+
+const observer6 = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    const container = entry.target;
+    if (entry.isIntersecting) {
+      container.classList.add("on");
+    } else {
+      container.classList.remove("on");
+    }
+  });
+}, options);
+
+observer6.observe(panel5);
+observer6.observe(centerSub);
+
+
+//6페이지 Interaction
+const thanksList = document.querySelectorAll(".thanks-list li");
+
+const observer7 = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    const container = entry.target;
+    if (entry.isIntersecting) {
+      container.classList.add("fade-left");
+    } else {
+      container.classList.remove("fade-left");
+    }
+  });
+}, options);
+
+thanksList.forEach((target) => {
+  observer7.observe(target);
 });
