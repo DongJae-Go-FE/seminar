@@ -41,7 +41,7 @@ body { overflow: hidden; margin: 0;font-family: "Pretendard", sans-serif;text-re
 .panel .main-text .marker::after{content: ""; display: block; width: 0%; height: 18px; position: absolute; top:25px; left: 0; background-color: rgba(255, 255, 255, 0.50);
 transition: width 1s; transition-delay: 1.5s;}
 .panel .main-text .marker.on::after{width: 100%;}
-.panel .sub-text{display: block; width: 100%; font-size: 24px; font-weight: 500; color: #888; white-space: pre; line-height: normal;} 
+.panel .sub-text{display: block; width: 100%; font-size: 24px; font-weight: 500; color: #888; white-space: pre-line; line-height: normal;} 
 .panel .sub-text.type2{font-size: 18px;}
 .panel hr{ width: 100%; height: 1px; margin: 50px 0 73px; border: 0; background-color : #eaeaea;}
 .panel .content{width: 100%; height: auto; padding: 20px; background-color: #fcfcfc; border-radius: 4px;}
@@ -59,8 +59,10 @@ transition: width 1s; transition-delay: 1.5s;}
 /* 첫번째 페이지 */
 .panel:nth-child(1){display: flex; flex-wrap: wrap; align-content: space-between;}
 .panel:nth-child(1) h1{width: 100%; font-size: 80px; font-weight: 800; color: #fff;}
-.panel:nth-child(1) .bottom{display: flex; justify-content: space-between; width: 100%;}
+.panel:nth-child(1) .bottom{display: flex; justify-content: space-between; width: 100%; align-items: center;}
 .panel:nth-child(1) .bottom p{font-size: 28px; font-weight: 700; color: #fff;}
+.panel:nth-child(1) .bottom img{height: 150px; object-fit: cover;}
+
 
 /* 두번째 페이지 */
 .panel:nth-child(2){display: flex; align-items: center;}

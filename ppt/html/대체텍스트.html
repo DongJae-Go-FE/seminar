@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대체 텍스트</title>
+    <style>
+      button {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50px;
+        background-color: #ff2d55;
+        cursor: pointer;
+      }
+      .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>대체 텍스트</h1>
+    <p>이미지에 대한 설명글 유무에 따른 차이를 들려줍니다.</p>
+    <a href="https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn" target="_blank">설치하고 시작</a>
+
+    <h2>1.Image Tag Alt Case</h2>
+    <ul>
+      <li>
+        <p>alt 속성에 이미지 설명 미삽입</p>
+        <img src="../asset/img/Layer_1.png" alt="" />
+      </li>
+      <li>
+        <p>alt 속성에 이미지 설명 삽입</p>
+        <img
+          src="../asset/img/Layer_1.png"
+          alt="alt 속성에 이미지 설명을 삽입하면 이렇게 읽어줍니다."
+        />
+      </li>
+    </ul>
+
+    <h2>2.Image Replacement Case</h2>
+    <ul>
+      <li>
+        <p>Image Replacement 미적용</p>
+        <button type="button"></button>
+      </li>
+      <li>
+        <p>Image Replacement 적용</p>
+        <button type="button">
+          <span class="blind">css로 대체 텍스트를 넣어주면 이런식으로 읽어줍니다!</span>
+        </button>
+      </li>
+    </ul>
+  </body>
+</html>
