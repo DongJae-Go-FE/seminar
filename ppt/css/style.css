@@ -25,7 +25,7 @@ body { overflow: hidden; margin: 0;font-family: "Pretendard", sans-serif;text-re
 /* 페이지 공통 */
 .panel .title{display: block; width: 100%; margin-bottom: 20px; font-size: 48px; font-weight: 900;}
 
-.panel:nth-child(2) .title{ position: relative; right: 200px; opacity: 0; transition: right 1s ease, opacity 1s ease;}
+.panel:nth-child(2) .title{width: auto; position: relative; right: 200px; opacity: 0; transition: right 1s ease, opacity 1s ease;}
 .panel:nth-child(2) .title.fade-in {transition: right 1s ease, opacity 1s ease; right: 0px; opacity: 1;}
 
 .panel:nth-child(3) .title, .panel:nth-child(3) .sub-text{ position: relative; top: 200px; opacity: 0; transition: top 1s ease, opacity 1s ease;}
@@ -55,6 +55,16 @@ transition: width 1s; transition-delay: 1.5s;}
 .bullet-list li .fine.on::after{width: 100%; transition: width 1s; transition-delay: 0.5s;}
 .bullet-list li:not(:last-child){margin-bottom: 10px;}
 
+
+.table{position: relative; border-top: 1px solid #ddd;}
+.table table{width: 100%; height: 100%; table-layout: fixed;}
+.table table caption{overflow: hidden; width: 1px; height: 1px; position: absolute; clip: rect(0 0 0 0);}
+.table table thead th{height: 54px; font-size: 18px; font-weight: 600; color: #888; background-color: #eaeaea; vertical-align: middle;}
+.table table thead th:first-child{border-left: 1px solid #ddd;}
+.table table thead th:last-child{border-right: 1px solid #ddd;}
+.table table tbody th, .table table tbody td{height: 38px; vertical-align: middle; border: 1px solid #ddd;}
+.table table tbody th{font-weight: 600;}
+.table table tbody td{padding: 0 20px; font-weight: 500;}
 
 /* 첫번째 페이지 */
 .panel:nth-child(1){display: flex; flex-wrap: wrap; align-content: space-between;}
