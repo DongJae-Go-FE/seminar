@@ -39,19 +39,21 @@ body { overflow: hidden; margin: 0;font-family: "Pretendard", sans-serif;text-re
 .panel:nth-child(4) .main-text.on{opacity: 1;}
 .panel .main-text .marker{position: relative;}
 .panel .main-text .marker::after{content: ""; display: block; width: 0%; height: 18px; position: absolute; top:25px; left: 0; background-color: rgba(255, 255, 255, 0.50);
-transition: width 1s; transition-delay: 1.5s;}
+transition: width 1s; transition-delay: 1s;}
 .panel .main-text .marker.on::after{width: 100%;}
 .panel .sub-text{display: block; width: 100%; font-size: 24px; font-weight: 500; color: #888; white-space: pre-line; line-height: normal;} 
 .panel .sub-text.type2{font-size: 18px;}
 .panel hr{ width: 100%; height: 1px; margin: 50px 0 73px; border: 0; background-color : #eaeaea;}
 .panel .content{width: 100%; height: auto; padding: 20px; background-color: #fcfcfc; border-radius: 4px;}
 .panel .content:not(:last-child){margin-bottom: 50px;}
+.panel .content > p{font-size: 20px;}
+
 
 .bullet-list + .bullet-list{margin-top: 50px;}
-.bullet-list li{font-weight: 500;}
+.bullet-list li{font-weight: 500; font-size: 20px; line-height: 1.2;}
 .bullet-list li b {font-weight: 800;}
 .bullet-list li .fine{display: inline-block; position: relative;}
-.bullet-list li .fine::after{content: ""; display: inline-block; width: 0; height: 17px; position: absolute; top:0; left: 0; background-color: rgba(0, 66, 241, 0.34); transition: width 1s; transition-delay: 0.5s;}
+.bullet-list li .fine::after{content: ""; display: inline-block; width: 0; height: 24px; position: absolute; top:0; left: 0; background-color: rgba(0, 66, 241, 0.34); transition: width 1s; transition-delay: 0.5s;}
 .bullet-list li .fine.on::after{width: 100%; transition: width 1s; transition-delay: 0.5s;}
 .bullet-list li:not(:last-child){margin-bottom: 10px;}
 

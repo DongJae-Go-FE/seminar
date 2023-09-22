@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>대체 텍스트</title>
     <style>
+
+      *{
+        margin: 10px;
+      }
       button {
         width: 50px;
         height: 50px;
@@ -12,6 +16,7 @@
         border-radius: 50px;
         background-color: #ff2d55;
         cursor: pointer;
+        background: url("../asset/img/save-one.png") no-repeat center / 40px 40px;
       }
       .blind {
         position: absolute;
@@ -30,32 +35,25 @@
     <a href="https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn" target="_blank">설치하고 시작</a>
 
     <h2>1.Image Tag Alt Case</h2>
-    <ul>
-      <li>
-        <p>alt 속성에 이미지 설명 미삽입</p>
-        <img src="../asset/img/Layer_1.png" alt="" />
-      </li>
-      <li>
-        <p>alt 속성에 이미지 설명 삽입</p>
-        <img
-          src="../asset/img/Layer_1.png"
-          alt="alt 속성에 이미지 설명을 삽입하면 이렇게 읽어줍니다."
-        />
-      </li>
-    </ul>
+    
+    <p>alt 속성에 이미지 설명 미삽입</p>
+    <img src="../asset/img/Layer_1.png" alt="" />
+
+    <p>alt 속성에 이미지 설명 삽입</p>
+    <img
+      src="../asset/img/Layer_1.png"
+      alt="부동산 일일사 씨아이 로고 입니다."
+    />
 
     <h2>2.Image Replacement Case</h2>
-    <ul>
-      <li>
-        <p>Image Replacement 미적용</p>
-        <button type="button"></button>
-      </li>
-      <li>
-        <p>Image Replacement 적용</p>
-        <button type="button">
-          <span class="blind">css로 대체 텍스트를 넣어주면 이런식으로 읽어줍니다!</span>
-        </button>
-      </li>
-    </ul>
+
+    <p>Image Replacement 미적용</p>
+    <button type="button"></button>
+
+    <p>Image Replacement 적용</p>
+    <button type="button">
+      <span class="blind">저장하기</span>
+    </button>
+
   </body>
 </html>
