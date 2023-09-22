@@ -118,6 +118,8 @@
   });
   wrap.addEventListener("wheel", scrollY);
   swipe(wrap);
+
+  //backTop 
   //var tops = document.querySelectorAll('.top');
   //for (var i = 0; i < tops.length; i++) {
   //	tops[i].addEventListener('click', function() {
