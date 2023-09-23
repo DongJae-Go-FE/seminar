@@ -22,7 +22,7 @@ body { overflow: hidden; margin: 0;font-family: "Pretendard", sans-serif;text-re
 .panel:nth-child(11) {background: #fff; } 
 .panel:nth-child(12) {background: #000; } 
 
-/* 페이지 공통 */
+/* 페이지 공통 모듈 */
 .panel .title{display: block; width: 100%; margin-bottom: 20px; font-size: 48px; font-weight: 900;}
 
 .panel:nth-child(2) .title{width: auto; position: relative; right: 200px; opacity: 0; transition: right 1s ease, opacity 1s ease;}
